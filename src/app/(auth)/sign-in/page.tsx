@@ -1,10 +1,15 @@
-export default function Page() {
+"use client";
+
+import AuthForm from "@/components/AuthForm";
+import { signInSchema } from "@/lib/validations";
+
+export default function SignInPage() {
   return (
-    <div className="flex h-screen w-full items-center justify-center">
-      <div className="w-full max-w-md px-4">
-        <h1 className="text-2xl font-bold text-center mb-6">Sign In</h1>
-        {/* Sign In Form will go here */}
-      </div>
-    </div>
+    <AuthForm
+      type="SIGN_IN"
+      schema={signInSchema}
+      defaultValues={{ email: "", password: "" }}
+      onSubmit={() => {}}
+    />
   );
 }
