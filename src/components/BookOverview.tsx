@@ -1,22 +1,7 @@
 import Image from "next/image";
 import { Button } from "./ui/button";
 import BookCover from "./BookCover";
-
-type BookOverviewProps = {
-  id: number;
-  title: string;
-  author: string;
-  genre: string;
-  rating: number;
-  total_copies: number;
-  available_copies: number;
-  description: string;
-  color: string;
-  cover: string;
-  video: string;
-  summary: string;
-  isLoaned?: boolean;
-};
+import { Book } from "@/types/book";
 
 export default function BookOverview({
   title,
@@ -28,7 +13,7 @@ export default function BookOverview({
   description,
   color,
   cover,
-}: Readonly<BookOverviewProps>) {
+}: Readonly<Book>) {
   return (
     <section className="book-overview">
       <div className="flex flex-1 flex-col gap-5">
@@ -71,7 +56,7 @@ export default function BookOverview({
 
         <p className="book-description">{description}</p>
 
-        <Button className="book-overview-button">
+        <Button className="book-overview_btn">
           <Image src="/icons/book.svg" alt="book" width={20} height={20} />
 
           <p className="font-bebas-neue text-xl text-dark-100">Borrow</p>
